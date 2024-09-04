@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memes Page</title>
+    <!--<link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Memes Container */
+.memes-container {
+    width: 400px;
+    height: 90vh;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+/* Meme Item */
+.meme {
+    position: relative;
+    margin: 20px 0;
+    background-color: #000;
+    border-radius: 15px;
+}
+
+.meme img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Meme Buttons */
+.meme-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 15px 15px;
+}
+
+.reaction-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.reaction-button:hover {
+    transform: scale(1.2);
+}
+
+</style>
+<body>
+    <div class="memes-container">
+        <div class="meme" id="meme1">
+            <img src="Images/ladesh.jpg" alt="Meme 1">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬 </button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme2">
+            <img src="Images/ab.jpg" alt="Meme 2">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬 </button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme3">
+            <img src="Images/teet.jpg" alt="Meme 3">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬 </button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme4">
+            <img src="Images/blind.jpg" alt="Meme 4">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬 </button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme5">
+            <img src="Images/bucks.jpg" alt="Meme 5">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬 </button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme6">
+            <img src="Images/crush.jpg" alt="Meme 6">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬</button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme7">
+            <img src="Images/cheat.jpg" alt="Meme 7">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬</button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme8">
+            <img src="Images/work.jpg" alt="Meme 8">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬</button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme9">
+            <img src="Images/house.jpg" alt="Meme 9">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬</button>
+            <button class="reaction-button">🔗</button>
+        </div>
+        <div class="meme" id="meme10">
+            <img src="Images/tom.jpg" alt="Meme 10">
+            <button class="reaction-button">😂 </button>
+            <button class="reaction-button">💬</button>
+            <button class="reaction-button">🔗</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
