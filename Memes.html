@@ -4,71 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memes Page</title>
-    <!--<link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="memes.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
 </head>
-<style>
-    /* General Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Memes Container */
-.memes-container {
-    width: 400px;
-    height: 90vh;
-    overflow-y: scroll;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-}
-
-/* Meme Item */
-.meme {
-    position: relative;
-    margin: 20px 0;
-    background-color: #000;
-    border-radius: 15px;
-}
-
-.meme img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
-
-/* Meme Buttons */
-.meme-buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 0 0 15px 15px;
-}
-
-.reaction-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #fff;
-    padding: 10px;
-    transition: transform 0.3s ease;
-}
-
-.reaction-button:hover {
-    transform: scale(1.2);
-}
-
-</style>
 <body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="Images/logo.png" alt="Logo" class="logo">
+                <h1 class="company-name">Serendipity</h1>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="Memes.html">Memes</a></li>
+                <li><a href="MHtracker.html">MHTracker</a></li>
+                <li><a href="need-help.html">Need Help?</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="memes-container">
         <div class="meme" id="meme1">
             <img src="Images/ladesh.jpg" alt="Meme 1">

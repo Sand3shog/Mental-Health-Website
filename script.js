@@ -30,6 +30,7 @@ window.onload = function() {
     }
 }
 
+
 function onFormSubmit() {
     // Hide the popup
     var modal = document.getElementById('myModal');
@@ -135,9 +136,9 @@ function provideFeedback(data) {
 
 function deleteRecord(index) {
     var records = JSON.parse(window.localStorage.getItem('record'));
-    records.splice(index, 1); // Remove the record at the given index
+    records.splice(index, 1); 
     window.localStorage.setItem('record', JSON.stringify(records));
-    location.reload(); // Refresh the page to update the table
+    location.reload(); 
 }
 
 function modifyRecord(index) {
@@ -164,8 +165,6 @@ function modifyRecord(index) {
         e.preventDefault(); 
 
         console.log("Submitting modified data..."); //for checking only
-
-        // Serialize the form data
         data = $("#quiz").serializeArray();
 
         console.log("New data:", data); //for checking only
@@ -178,6 +177,110 @@ function modifyRecord(index) {
         modal.style.display = "none";
         location.reload(); 
 
-        return false; // Prevent the form from submitting 
+        return false; 
     }
 }
+
+/*for activities*/
+// JavaScript for Daily Positive Affirmation
+document.addEventListener("DOMContentLoaded", function() {
+    const affirmations = [
+        "You are strong.",
+        "You are capable of amazing things.",
+        "You are enough.",
+        "You are worthy of love and respect.",
+        "You are doing the best you can."
+    ];
+
+    const affirmationElement = document.getElementById("affirmation");
+    const randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+    affirmationElement.textContent = randomAffirmation;
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+        const checklist = document.getElementById('checklist');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const summaryBtn = document.getElementById('summaryBtn');
+        const summary = document.getElementById('summary');
+        const completedTasks = document.getElementById('completedTasks');
+
+        // Function to add a new custom task
+        addTaskBtn.addEventListener('click', function () {
+            const taskText = prompt("Enter your custom task:");
+            if (taskText) {
+                const newTaskId = `task${checklist.children.length + 1}`;
+                const newTask = document.createElement('li');
+                newTask.innerHTML = `<input type="checkbox" id="${newTaskId}"> <label for="${newTaskId}">${taskText}</label>`;
+                checklist.appendChild(newTask);
+            }
+        });
+
+        // Function to show a summary of completed tasks
+        summaryBtn.addEventListener('click', function () {
+            completedTasks.innerHTML = ''; // Clear previous summary
+            const checkedItems = checklist.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedItems.length === 0) {
+                alert("You haven't completed any tasks yet!");
+                return;
+            }
+
+            checkedItems.forEach(function (item) {
+                const taskLabel = checklist.querySelector(`label[for="${item.id}"]`).textContent;
+                const completedItem = document.createElement('li');
+                completedItem.textContent = taskLabel;
+                completedTasks.appendChild(completedItem);
+            });
+
+            summary.style.display = 'block'; // Show the summary section
+        });
+    });
+
+// Gratitude Wall JavaScript
+const gratitudeForm = document.getElementById('gratitude-form');
+const gratitudePosts = document.getElementById('gratitude-posts');
+
+gratitudeForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const text = document.getElementById('gratitude-text').value;
+    if (text) {
+        const post = document.createElement('div');
+        post.classList.add('gratitude-post');
+        post.innerHTML = `
+            <p>${text}</p>
+            <button>&#x2764;</button>
+        `;
+        gratitudePosts.appendChild(post);
+        document.getElementById('gratitude-text').value = '';
+        updateLocalStorage();
+    }
+});
+
+gratitudePosts.addEventListener('click', function(e) {
+    if (e.target.tagName === 'BUTTON') {
+        e.target.classList.toggle('liked');
+    }
+});
+
+function updateLocalStorage() {
+    const posts = [];
+    document.querySelectorAll('.gratitude-post').forEach(post => {
+        posts.push(post.querySelector('p').textContent);
+    });
+    localStorage.setItem('gratitudePosts', JSON.stringify(posts));
+}
+
+function loadFromLocalStorage() {
+    const posts = JSON.parse(localStorage.getItem('gratitudePosts')) || [];
+    posts.forEach(text => {
+        const post = document.createElement('div');
+        post.classList.add('gratitude-post');
+        post.innerHTML = `
+            <p>${text}</p>
+            <button>&#x2764;</button>
+        `;
+        gratitudePosts.appendChild(post);
+    });
+}
+
+loadFromLocalStorage();
