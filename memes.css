@@ -34,8 +34,8 @@ header {
 }
 
 .company-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 2em;
+    font-family: 'Tangerine', cursive;
+    font-size: 3em;
     color: #00796b;
     margin: 0;
     transition: color 0.3s, transform 0.3s;
@@ -70,7 +70,7 @@ nav a {
     border-radius: 4px;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
     color: #00796b;
     border-bottom: 2px solid #00796b;
     background-color: rgba(0, 121, 107, 0.1);

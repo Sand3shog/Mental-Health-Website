@@ -2,35 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Need Help?</title>
+    <title>Need Help? | Serendipity Mental Health Tracker</title>
+
     <link rel="stylesheet" href="need-help.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans&family=Tangerine:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Header Section -->
     <header>
+        <div class="logo-container">
+            <img src="Images/logo.png" alt="Logo" class="logo">
+            <h1 class="company-name">Serendipity</h1>
+        </div>
         <nav>
-            <div class="logo-container">
-                <img src="Images/logo.png" alt="Logo" class="logo">
-                <h1 class="company-name">Serendipity</h1>
-            </div>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="activities.html">Activities</a></li>
                 <li><a href="Memes.html">Memes</a></li>
                 <li><a href="MHtracker.html">MHTracker</a></li>
-                <li><a href="need-help.html">Need Help?</a></li>
+                <li><a href="need-help.html" class="active">Need Help?</a></li>
             </ul>
         </nav>
     </header>
-    
+
+    <!-- Help Section -->
     <main>
-        <h1>Need Help?</h1>
-        <p>If you are struggling or need someone to talk to, explore our resources or reach out to a professional.</p>
-    </main>
+        <div class="help-container">
+            <h1 class="page-title">Get Support & Reach Out</h1>
+            <p>If you're feeling overwhelmed or need assistance, don't hesitate to reach out. We're here to help!</p>
+
+            <!-- Contact Form Section -->
+            <section class="contact-section">
+                <div class="contact-container">
+                    <h1>Contact Me</h1>
+                    <p>If you have any questions or just want to get in touch, feel free to contact me using the form below or via my social media channels.</p>
+                    <form action="mailto:sandeshmaharzan5@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <div class="resource">
+                <h2>Emergency Support</h2>
+                <p>If you're in immediate danger or need urgent support, please contact your local emergency services or one of the helplines below:</p>
+                <ul>
+                    <li>National Suicide Prevention Lifeline: <a href="tel:1-800-273-8255">1-800-273-8255</a></li>
+                    <li>Crisis Text Line: Text <strong>HELLO</strong> to <strong>741741</strong></li>
+                    <li>Local Emergency Services: <strong>911</strong> (US) / <strong>112</strong> (International)</li>
+                </ul>
+            </div>
     
+            <div class="resource">
+                <h2>Professional Therapy Services</h2>
+                <p>Consider reaching out to licensed professionals for personalized therapy and support:</p>
+                <ul>
+                    <li>BetterHelp: <a href="https://www.betterhelp.com" target="_blank">Visit Website</a></li>
+                    <li>Talkspace: <a href="https://www.talkspace.com" target="_blank">Visit Website</a></li>
+                    <li>Online Therapy: <a href="https://www.onlinetherapy.com" target="_blank">Visit Website</a></li>
+                </ul>
+            </div>
+    
+            <div class="resource">
+                <h2>Mental Health Apps</h2>
+                <p>These apps can provide immediate support, exercises, and guided meditations to help you manage stress and anxiety:</p>
+                <ul>
+                    <li>Calm: <a href="https://www.calm.com" target="_blank">Visit Website</a></li>
+                    <li>Headspace: <a href="https://www.headspace.com" target="_blank">Visit Website</a></li>
+                    <li>Insight Timer: <a href="https://www.insighttimer.com" target="_blank">Visit Website</a></li>
+                </ul>
+            </div>
+    
+            <div class="resource">
+                <h2>Community Support</h2>
+                <p>Join online communities where people share their mental health journeys and support one another:</p>
+                <ul>
+                    <li>Reddit - r/mentalhealth: <a href="https://www.reddit.com/r/mentalhealth" target="_blank">Visit Community</a></li>
+                    <li>7 Cups: <a href="https://www.7cups.com" target="_blank">Visit Website</a></li>
+                    <li>Mental Health America: <a href="https://www.mhanational.org" target="_blank">Visit Website</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Mental Health Tracker. All rights reserved.</p>
+        <p>&copy; 2024 Serendipity | <a href="need-help.html">Contact Us</a></p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
