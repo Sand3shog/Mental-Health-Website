@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities</title>
     <link rel="stylesheet" href="activities.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
 </head>
 <body>
     <header>
@@ -26,40 +29,52 @@
     </header>
     
     <main>
-        <!--<h1>Activities</h1> -->
         <p>Explore various mental health activities here. Stay engaged and improve your mental well-being.</p>
-        <p id="affirmation" style="font-size: 1.5em; color: #00796b;"></p>
-
         <div class="container">
             <div class="self-care-checklist">
                 <ul id="checklist">
-                    <!-- Predefined tasks -->
                     <li><input type="checkbox" id="task1"> <label for="task1">Drink water</label></li>
                     <li><input type="checkbox" id="task2"> <label for="task2">Take a walk</label></li>
                     <li><input type="checkbox" id="task3"> <label for="task3">Meditate</label></li>
                 </ul>
                 <button id="addTaskBtn">Add Custom Task</button>
                 <button id="summaryBtn">Show Summary</button>
-            <div id="summary" style="display: none;">
-                <h3>Today's Completed Tasks:</h3>
-                <ul id="completedTasks"></ul>
-            </div>
+                <div id="summary" style="display: none;">
+                    <h3>Today's Completed Tasks:</h3>
+                    <ul id="completedTasks"></ul>
+                </div>
             </div>
 
             <div class="gratitude-wall">
-            <h2>Gratitude Wall</h2>
-            <form id="gratitude-form">
-                <textarea id="gratitude-text" placeholder="What are you grateful for today?" required></textarea>
-                <button type="submit">Post</button>
-            </form>
-            <div id="gratitude-posts"></div>
+                <h2>Gratitude Wall</h2>
+                <form id="gratitude-form">
+                    <textarea id="gratitude-text" placeholder="What are you grateful for today?" required></textarea>
+                    <button type="submit">Post</button>
+                </form>
+                <div id="gratitude-posts"></div>
+            </div>
         </div>
-    </div>
-    </div>
+
+        <!-- Calendar Icon -->
+        <div class="calendar-icon" onclick="toggleCalendar()">
+            📅
+        </div>
+
+        <!-- Calendar Popup -->
+        <div id="calendar-popup" class="calendar-popup">
+            <div class="calendar-content">
+                <span class="close" onclick="toggleCalendar()">&times;</span>
+                <div id="calendar"></div>
+            </div>
+        </div>
     </main>
+
     <footer>
         <p>&copy; 2024 Mental Health Tracker. All rights reserved.</p>
     </footer>
+
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>

@@ -3,35 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Serendipity - Mental Health Tracker</title>
     <link rel="stylesheet" href="home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo-container">
-                <img src="Images/logo.png" alt="Logo" class="logo">
-                <h1 class="company-name">Serendipity</h1>
-            </div>
-            <ul>
-                <li><a href="home.html" class="active">Home</a></li>
-                <li><a href="activities.html">Activities</a></li>
-                <li><a href="Memes.html">Memes</a></li>
-                <li><a href="MHtracker.html">MHTracker</a></li>
-                <li><a href="need-help.html">Need Help?</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <h1>Welcome to the Mental Health Tracker</h1>
-        <p>This is the home page of the Mental Health Tracker. Navigate through the pages to explore various features.</p>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Mental Health Tracker. All rights reserved.</p>
-    </footer>
+
+<header>
+    <nav>
+        <div class="logo-container">
+            <img src="Images/logo.png" alt="Logo" class="logo">
+            <h1 class="company-name">Serendipity</h1>
+        </div>
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="Memes.html">Memes</a></li>
+            <li><a href="MHtracker.html">MHTracker</a></li>
+            <li><a href="need-help.html">Need Help?</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Serendipity</h1>
+            <p>Embark on your journey towards mental wellness with our simple and intuitive mental health tracker.</p>
+            <button id="motivateBtn">Get Daily Motivation</button>
+            <div id="quoteBox"></div>
+        </div>
+        <div class="hero-image">
+            <img src="Images/Mental health.png" alt="Mental Health" class="mental-health-img">
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Why Mental Health Matters</h2>
+        <p>Maintaining mental well-being is essential for a balanced life. Use our tracker to monitor daily activities, reflect on your emotional state, and take actionable steps toward personal growth.</p>
+        <div class="info-images">
+            <img src="Images/wellness.jpg" alt="Wellness">
+            <img src="Images/growth.jpg" alt="Growth">
+            <img src="Images/support.jpg" alt="Support">
+        </div>
+    </section>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com/sandesh.freak" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/sand3shog_/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/+977-9861609576" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Serendipity - All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

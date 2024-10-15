@@ -248,7 +248,10 @@ gratitudeForm.addEventListener('submit', function(e) {
         post.classList.add('gratitude-post');
         post.innerHTML = `
             <p>${text}</p>
-            <button>&#x2764;</button>
+            <div class="post-actions">
+                <button class="like-button">&#x2764;</button>
+                <button class="delete-button">&#x1f5d1;</button>
+            </div>
         `;
         gratitudePosts.appendChild(post);
         document.getElementById('gratitude-text').value = '';
@@ -257,8 +260,12 @@ gratitudeForm.addEventListener('submit', function(e) {
 });
 
 gratitudePosts.addEventListener('click', function(e) {
-    if (e.target.tagName === 'BUTTON') {
+    if (e.target.classList.contains('like-button')) {
         e.target.classList.toggle('liked');
+    } else if (e.target.classList.contains('delete-button')) {
+        const post = e.target.closest('.gratitude-post');
+        post.remove();
+        updateLocalStorage();
     }
 });
 
@@ -277,10 +284,68 @@ function loadFromLocalStorage() {
         post.classList.add('gratitude-post');
         post.innerHTML = `
             <p>${text}</p>
-            <button>&#x2764;</button>
+            <div class="post-actions">
+                <button class="like-button">&#x2764;</button>
+                <button class="delete-button">&#x1f5d1;</button>
+            </div>
         `;
         gratitudePosts.appendChild(post);
     });
 }
 
 loadFromLocalStorage();
+
+
+//calendar
+function toggleCalendar() {
+    const calendarPopup = document.getElementById('calendar-popup');
+    
+    // Initialize FullCalendar only when popup is opened
+    if (calendarPopup.style.display === 'flex') {
+        calendarPopup.style.display = 'none'; // Close the calendar
+    } else {
+        calendarPopup.style.display = 'flex'; // Open the calendar
+        initializeCalendar(); // Call the function to initialize FullCalendar
+    }
+}
+
+function initializeCalendar() {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        events: [
+            // Example events (you can replace this with your own data)
+            { title: 'Self-care Day', date: '2024-10-15' },
+            { title: 'Mental Health Awareness', date: '2024-10-20' }
+        ],
+        editable: true,
+        selectable: true,
+        dateClick: function(info) {
+            alert('Clicked on: ' + info.dateStr);
+        }
+    });
+    calendar.render();
+}
+
+//Home
+document.getElementById('motivateBtn').addEventListener('click', function() {
+    const quotes = [
+        "Keep pushing forward, no matter what.",
+        "Believe in yourself; you are stronger than you think.",
+        "Small steps every day lead to big changes.",
+        "Your mental health is a priority, not an option.",
+        "Embrace the glorious mess that you are."
+    ];
+
+    // Pick a random quote
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+
+    // Display it in the quoteBox
+    document.getElementById('quoteBox').textContent = randomQuote;
+});

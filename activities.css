@@ -23,7 +23,12 @@ header {
 .logo {
     width: 50px;
     height: auto;
-    border-radius: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: rotate(360deg);
 }
 
 .company-name {
@@ -97,6 +102,72 @@ main p {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+}
+
+.calendar-icon {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: #1f54db;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.calendar-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calendar-content h2 {
+    margin: 0;
+    color: #00796b;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-grid div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.calendar-grid div:hover {
+    background-color: #e0f7fa;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 3.5em;
+    color: #f7ffff;
+    position: absolute;
+    top: 10px;
+    right: 15px;
 }
 
 .self-care-checklist,
@@ -227,6 +298,8 @@ main p {
 .gratitude-post button.liked {
     color: #e91e63;
 }
+
+
 
 footer {
     background-color: #e0f7fa;
