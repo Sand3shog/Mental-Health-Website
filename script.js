@@ -1,3 +1,4 @@
+
 window.onload = function() {
     var openButton = document.getElementById('quiz-popup-button');
     var modal = document.getElementById('myModal');
@@ -100,7 +101,6 @@ function provideFeedback(data) {
     var feedbackMessage = document.getElementById('feedback-message');
     var videoRecommendation = document.getElementById('video-recommendation');
     var videoSource = document.getElementById('video-source');
-
     // Define local video paths
     var videos = {
         toughDay: "videos/vlog.mp4",
@@ -126,7 +126,6 @@ function provideFeedback(data) {
         videoRecommendation.style.display = "none";
         return; // No video recommendation for neutral days
     }
-
     // Show the video recommendation
     videoRecommendation.style.display = "block";
     videoSource.parentElement.load(); // Reload the video element with the new source
@@ -339,13 +338,33 @@ document.getElementById('motivateBtn').addEventListener('click', function() {
         "Believe in yourself; you are stronger than you think.",
         "Small steps every day lead to big changes.",
         "Your mental health is a priority, not an option.",
-        "Embrace the glorious mess that you are."
+        "Embrace the glorious mess that you are.",
+        "You're not alone in this journey; take it one day at a time.",
+        "Every storm runs out of rain. Stay strong.",
+        "Progress, not perfection, is what matters."
     ];
 
     // Pick a random quote
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomQuote = quotes[randomIndex];
 
-    // Display it in the quoteBox
-    document.getElementById('quoteBox').textContent = randomQuote;
+    const quoteBox = document.getElementById('quoteBox');
+
+    // Add a fade-out effect before changing the quote
+    quoteBox.style.opacity = 0;
+    
+    setTimeout(() => {
+        // Update the quote text
+        quoteBox.textContent = randomQuote;
+
+        // Change text color randomly
+        const colors = ['#00796b', '#004d40', '#1de9b6', '#ff7043', '#ffca28'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        quoteBox.style.color = randomColor;
+
+        // Add a fade-in effect
+        quoteBox.style.opacity = 1;
+    }, 500); // Wait 500ms before showing the new quote
 });
+
+
